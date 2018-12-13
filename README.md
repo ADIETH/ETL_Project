@@ -1,58 +1,16 @@
-# ETL_Project
-# 
+##ETL Proposal
+Members: Alexander Mackenzie, Addisalem Abera and Dylan Grimm
+Summary: We will be pulling LA Bike Sharing data (JSON) and active businesses (CSV) from Kaggle. The reason for this is because Dylan is going to LA at the end of the month and he wants to know if bike sharing locations are in good locations and close to different place he wants to go.
+##Links:
+##Bike Sharing: https://bikeshare.metro.net/stations/json/
+##Active Businesses: https://www.kaggle.com/cityofLA/los-angeles-listing-of-businesses
+ 
+ 
+##ETL Final
+#Extraction: We will be pulled LA Bike Sharing data (JSON) from their website and active businesses (CSV) from Kaggle. For links please reference above.
+#Transform: We cleaned up the CSV data so that it could worked well with memory with our computers. The raw CSV dataset encompassed 500,000 records and caused both encoding and memory errors. We trimmed the CSV data down to 15,000 records. We then condensed our data into a dataframe down to only having business name and addresses. We used pd.read_csv to do this. With the JSON file we needed to open the file as an object, so we could iterate through the 2 different data frames that had a series of lists. This allowed us to pull the names of the different bike racks and the addresses associated with them. We appended the information into separate lists and checked the length of each series to make sure they were the same; we then referenced them to create our data frame.
+#Load: We loaded the non-relational data into MYSQL the names of active businesses and bike racks with there associated addresses so later analysis can be easily done to see if bike rack locations are in convenient areas and close to businesses Dylan is interested in visiting in LA. We created 2 tables (bike and businesses) that can be used to analyze associated locations.
 
-This document contains guidelines, requirements, and suggestions for Project 1.
+ 
+ 
 
-## Team Effort
-
-Due to the short timeline, teamwork was crucial to the success of this project! Worked closely with team through all phases of the project to ensure that ever member of groub has clear understanding of everything.
-
-Working in a group enables you to tackle more difficult problems than you'd be able to working alone. In other words, working in a group allows you to **work smart** and **dream big**. Take advantage of it!
-
-## Project Proposal
-
-Before you start writing any code, remember that you only have one week to complete this project. View this project as a typical assignment from work. Imagine a bunch of data came in and you and your team are tasked with migrating it to a production data base.
-
-Take advantage of your Instructor and TA support during office hours and class project work time. They are a valuable resource and can help you stay on track.
-
-## Finding Data
-
-Your project must use 2 or more sources of data. We recommend the following sites to use as sources of data:
-
-* [data.world](https://data.world/)
-
-* [Kaggle](https://www.kaggle.com/)
-
-You can also use APIs or data scraped from the web. However, get approval from your instructor first. Again, there is only a week to complete this!
-
-## Data Cleanup & Analysis
-
-Once you have identified your datasets, perform ETL on the data. Make sure to plan and document the following:
-
-* The sources of data that you will extract from.
-
-* The type of transformation needed for this data (cleaning, joining, filtering, aggregating, etc).
-
-* The type of final production database to load the data into (relational or non-relational).
-
-* The final tables or collections that will be used in the production database.
-
-You will be required to submit a final technical report with the above information and steps required to reproduce your ETL process.
-
-## Project Report
-
-At the end of the week, your team will submit a Final Report that describes the following:
-
-* **E**xtract: your original data sources and how the data was formatted (CSV, JSON, MySQL, etc).
-
-* **T**ransform: what data cleaning or transformation was required.
-
-* **L**oad: the final database, tables/collections, and why this was chosen.
-
-Please upload the report to Github and submit a link to Bootcampspot.
-
-- - -
-
-### Copyright
-
-Coding Boot Camp © 2018. All Rights Reserved.
